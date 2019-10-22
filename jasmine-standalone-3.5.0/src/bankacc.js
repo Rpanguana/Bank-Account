@@ -36,7 +36,27 @@ console.log(bankAccount.finishMonth());
 console.log(bankAccount.deposit(100));
 console.log(bankAccount.withdraw(50));
 
+/////////
 
-class {
+class Bank extends BankAccount {
+    constructor(balance, interest, monthlyFee){
+        let bankacc = new BankAccount(balance, interest, monthlyFee);
+    }
+
+withdraw(bankAccountNumber,amount){ 
+// require an acccount number, validate it and require withdrawal amount.
+
+}
+
+deposit(bankAccountNumber,amount){
+// require account number, validate it and require deposit amount.
+
+}
+
+transfer(from_bank_account_number,to_bank_account_number, amount){
+// require FROM bank account number, validate it and require TO bank account number and validate it.
+// require amount and act withdraw on FROM account.
+// act deposit on TO account.... 
     
+}
 }
