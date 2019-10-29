@@ -15,12 +15,12 @@ return this.balance = parseInt(rate * this.balance - this.monthlyFee);
 
 deposit(amount){
 this.balance = this.balance + amount;
-return this.balance;
+// return this.balance;
 }
 
 withdraw(amount){
 this.balance = this.balance - amount;
-return this.balance;
+// return this.balance;
 }
 }
 
