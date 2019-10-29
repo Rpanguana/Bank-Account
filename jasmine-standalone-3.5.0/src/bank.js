@@ -9,50 +9,34 @@ class Bank {
     }
 
 createAccounts(balance, interest, monthlyFee, accountNumber){
-    this.bankAccount = new BankAccount(balance, interest, monthlyFee);
-    this.accountNumber = accountNumber;
     accounts.push({
         accountnumber : this.accountNumber,
         bankAccount : this.bankAccount
     })
 }
 
-withdraw(bankAccountNumber,amount){
-// require an acccount number, validate it and require withdrawal amount.
+withdraw(bankAccountNumber,amount, secretPassword){
+// require an acccount number, validate it and require withdrawal amount then do the withdrawal
 for (let i =0; i < accounts.length; i++){
     if (accounts[i].accountnumber === bankAccountNumber){
         accounts[i].bankAccount.withdraw(amount);
-    } 
-    // return this.bankAccount.balance;
+    }
 }}
 
 deposit(bankAccountNumber,amount){
-// require account number, validate it and require deposit amount.
+// require account number, validate it , require deposit amount and deposit the requested amount
 for (let j = 0; j < accounts.length; j++){
     if (accounts[j].accountnumber === bankAccountNumber){
         accounts[j].bankAccount.deposit(amount);
-    } 
-    // return this.bankAccount.balance;
-}}
+}}}
 
-transfer(from_bank_account_number, to_bank_account_number, amount){
-// var deposit = this.balance = this.balance - amount
-// for (let k =0; k < accounts.length; k++){
-//     if (from_bank_account_number === this.accountNumber ){
-//          accounts[k].bankAccount.withdraw(amount);
-//         console.log(amount+"isss")
-
-//             if (to_bank_account_number === this.accountNumber){
-//                 console.log(amount+" noww")
-//                 bankAccount.deposit(amount);
-                
-//                 return this.bankAccount.balance;
-//             }
-// }}}
+transfer(from_bank_account_number, to_bank_account_number, amount, secretPassword){
 
 client.withdraw(from_bank_account_number, amount)
 client.deposit(to_bank_account_number, amount)
 }
+
+// end of class
 }
 
 /*.............................................instances of bank. BANK ACCOUNTS.......................................*/
@@ -67,3 +51,4 @@ console.log(accounts)
 console.log(client.transfer(client.accountNumber, client2.accountNumber, 100))
 /* accounts after transfer transaction*/
 console.log(accounts)
+module.exports = Bank;
